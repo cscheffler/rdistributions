@@ -6,7 +6,7 @@
 
 dnorminvgamma <- function(x, sigma2, mu, lambda, alpha, beta) {
     # The pdf of the normal-inverse-gamma distribution at x (mean) and sigma2 (variance).
-    return(dnorm(x, mu, lambda * sigma2) * dinvgamma(sigma2, alpha, beta));
+    return(dnorm(x, mu, sqrt(lambda * sigma2)) * dinvgamma(sigma2, alpha, beta));
 }
 
 rnorminvgamma <- function(n, mu, lambda, alpha, beta) {
